@@ -1,0 +1,20 @@
+{# templates/create_habit.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une habitude</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouter une nouvelle habitude</h1>
+        <form action="{{ path('handle_create_habit') }}" method="post">
+            <label for="habit-title">Titre de l'habitude :</label>
+            <input type="text" id="habit-title" name="title" required>
+            <button class="button" type="submit">Ajouter</button>
+        </form>
+    </div>
+</body>
+</html>

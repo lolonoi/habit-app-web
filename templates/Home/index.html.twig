@@ -1,0 +1,28 @@
+{# templates/index.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur Habit Tracker</h1>
+        <div class="habit-list">
+            {% if habitList is empty %}
+                <p>Aucune habitude enregistrée.</p>
+            {% else %}
+                <ul>
+                    {% for habit in habitList %}
+                        <li>{{ habit.title }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="progress-bar" style="width: {{ percentage }}%;"></div>
+        <button onclick="location.href='{{ path('create_habit') }}'">Ajouter une habitude</button>
+    </div>
+</body>
+</html>

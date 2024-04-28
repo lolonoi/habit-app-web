@@ -1,0 +1,19 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+    # config/routes.yaml
+app_home:
+    path: /
+    controller: App\Controller\HabitController::index
+
+create_habit:
+    path: /create
+    controller: App\Controller\HabitController::createHabit
+
+handle_create_habit:
+    path: /handle-create
+    controller: App\Controller\HabitController::handleCreateHabit
+    methods: [POST]
+
